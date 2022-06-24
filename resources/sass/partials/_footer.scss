@@ -1,6 +1,13 @@
 footer{
-    background-color: $footer-bg;
     color: white;
-    padding: 2em;
-    text-align: center;
+    .foot-top{
+        background-color: black;
+        padding: 7em 0;
+        text-align: center;
+    }
+    .foot-bottom{
+        background-color: $footer-bg;
+        padding: 2em 0;
+        text-align: center;
+    }
 }

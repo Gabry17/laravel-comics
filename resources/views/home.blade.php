@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
 @section('main_content')
-<h1>ciao</h1>
+<div class="content">
+    <div class="top">
+        @include('components.comics-section', [
+        'comics_array' => $comics,
+        ])
+    </div>
+</div>
+<div class="center">
+    ICON
+</div>
 @endsection
