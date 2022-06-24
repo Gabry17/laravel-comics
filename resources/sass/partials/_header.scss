@@ -1,0 +1,13 @@
+header{
+    text-align: center;
+    .top{
+        background-color: $blue_color;
+    }
+    .bottom{
+        padding: 2em 0;
+    }
+    .banner{
+        height: 200px;
+        background-color: yellow;
+    }
+}
