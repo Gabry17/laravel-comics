@@ -21,3 +21,7 @@ Route::get('/', function () {
     ];
     return view('home', $data);
 });
+
+Route::get('/info-comics', function (){
+    return view('info-comics');
+});
