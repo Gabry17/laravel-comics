@@ -25,21 +25,19 @@ Route::get('/', function () {
 });
 
 Route::get('/comics/{id}', function ($id){
-    $comics_array = config('comics');
 
-    $info_arr = [];
-
-    foreach ($comics_array as $item) {
-        if ($item['id'] === $id ) {
-            $info_arr[] = $item;
-        }
-    }
-
-    $menu = config('menu');
+    $comics_array = collect(config('comics'));
     
+    $comic = $comics_array->where('id', $id)->first();
+    $menu = config('menu');
+
+
     $data = [
-        'info' => $info_arr,
+        'comic' => $comic,
         'menu_info' => $menu
     ];
+
+    // dd($info_arr);
+
     return view('info-comics', $data);
 })->name('info-comics');
