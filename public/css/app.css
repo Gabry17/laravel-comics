@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   text-align: center;
 }
@@ -11,7 +16,19 @@ header .top {
   background-color: #1c85d1;
 }
 header .bottom {
-  padding: 2em 0;
+  line-height: 100px;
+}
+header .bottom .active {
+  color: #1c85d1;
+  border-bottom: 5px solid #1c85d1;
+}
+header .bottom ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+header .bottom ul li {
+  margin-right: 2em;
 }
 header .banner {
   height: 400px;
@@ -84,6 +101,7 @@ main .single-cont-center .single-center .left .sale .price {
   width: 70%;
   align-items: center;
   border-right: 2px solid gray;
+  padding: 0 0.5em;
 }
 main .single-cont-center .single-center .left .sale .btn {
   width: 30%;

@@ -15,13 +15,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $comics_array = config('comics');
+    $menu = config('menu');
 
     $data = [
-        'comics' => $comics_array
+        'comics' => $comics_array,
+        'menu_info' => $menu
     ];
     return view('home', $data);
 });
 
-Route::get('/info-comics', function (){
-    return view('info-comics');
-});
+Route::get('/comics/{id}', function ($id){
+    $comics_array = config('comics');
+
+    $info_arr = [];
+
+    foreach ($comics_array as $item) {
+        if ($item['id'] === $id ) {
+            $info_arr[] = $item;
+        }
+    }
+
+    $menu = config('menu');
+    
+    $data = [
+        'info' => $info_arr,
+        'menu_info' => $menu
+    ];
+    return view('info-comics', $data);
+})->name('info-comics');

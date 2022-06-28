@@ -4,7 +4,19 @@ header{
         background-color: $blue_color;
     }
     .bottom{
-        padding: 2em 0;
+        line-height: 100px;
+        .active{
+            color: $blue_color;
+            border-bottom: 5px solid $blue_color;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            li{
+                margin-right: 2em;
+            }
+        }
     }
     .banner{
         height: 400px;
